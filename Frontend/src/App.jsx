@@ -1,4 +1,7 @@
-
+import Navbar from './components/navbar'
+import Login from './components/login'
+import Signup from './components/signup'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 
 function App() {
@@ -6,7 +9,13 @@ function App() {
 
   return (
     <>
-      <div className='font-bold'>Hello</div>
+    <BrowserRouter>
+	    <Routes>
+        <Route path="" element={<Navbar />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>    
     </>
   )
 }
